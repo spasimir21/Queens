@@ -4,7 +4,7 @@ A simple 2D turn-based game for a competition.
 
 # Online Host
 
-[https://queens.glitch.me](https://queens.glitch.me)
+[https://sp-queens.glitch.me](https://sp-queens.glitch.me)
 
 # Launch Instructions
 
