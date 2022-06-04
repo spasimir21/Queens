@@ -1,0 +1,86 @@
+.game {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
+}
+
+.grid {
+  position: relative;
+  flex-grow: 1;
+  background-color: var(--color-foreground);
+  max-width: calc(100vw - 20px);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: start;
+  gap: 1px;
+  padding: 1px;
+  align-self: center;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  justify-content: start;
+  gap: 1px;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+}
+
+.cell.active:hover {
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+
+.cell.clear {
+  background-color: white;
+}
+
+.cell.queen1 {
+  background-color: #fa9d9d !important;
+  background-image: url('../image/blue-queen.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cell.queen2 {
+  background-color: #fa9d9d !important;
+  background-image: url('../image/red-queen.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cell.forbidden {
+  background-color: #fa9d9d !important;
+}
+
+.game-text {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: 'Koulen', cursive;
+}
+
+.game-button {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: 'Koulen', cursive;
+}
+
+.game-button:hover {
+  transform: scale(1.1) translateY(1%);
+  cursor: pointer;
+}

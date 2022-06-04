@@ -1,0 +1,23 @@
+{
+  "name": "queens",
+  "version": "1.0.0",
+  "description": "",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spasimir21/queens.git"
+  },
+  "homepage": "https://github.com/spasimir21/queens#readme",
+  "bugs": {
+    "url": "https://github.com/spasimir21/queens/issues"
+  },
+  "author": "Spasimir Pavlov",
+  "license": "MIT"
+}
