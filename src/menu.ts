@@ -29,7 +29,7 @@ function createBoardSizeInput(
     const width = parseInt(widthInput.value);
     const height = parseInt(heightInput.value);
     const size = [width, height] as [number, number];
-    return [size, !size.some(len => isNaN(len) || !Number.isInteger(len) || len < 5 || len > 51) && width != height];
+    return [size, !size.some(len => isNaN(len) || !Number.isInteger(len) || len < 5 || len > 51)];
   };
 
   const onInput = (event: Event) => {

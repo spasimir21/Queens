@@ -44,8 +44,6 @@ class QueensSimulation {
   }
 
   constructor(size: [number, number]) {
-    if (size[0] == size[1]) throw new Error("Queens' grid can't be a square!");
-
     for (const len of size)
       if (!Number.isInteger(len) || len < 5 || len > 51)
         throw new Error("Queens's grid size must be a whole number and between 5 and 51!");
