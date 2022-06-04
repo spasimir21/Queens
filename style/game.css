@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 100%;
   height: 100%;
+  max-height: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -10,18 +11,24 @@
   gap: 10px;
 }
 
+.grid-container {
+  flex-grow: 1;
+  width: calc(100vw - 20px);
+  display: grid;
+  place-items: center;
+}
+
 .grid {
   position: relative;
-  flex-grow: 1;
   background-color: var(--color-foreground);
-  max-width: calc(100vw - 20px);
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: start;
   justify-content: start;
   gap: 1px;
   padding: 1px;
-  align-self: center;
 }
 
 .row {
@@ -47,7 +54,7 @@
 }
 
 .cell.queen1 {
-  background-color: #fa9d9d !important;
+  background-color: var(--color-forbidden) !important;
   background-image: url('../image/blue-queen.png');
   background-size: contain;
   background-position: center;
@@ -55,7 +62,7 @@
 }
 
 .cell.queen2 {
-  background-color: #fa9d9d !important;
+  background-color: var(--color-forbidden) !important;
   background-image: url('../image/red-queen.png');
   background-size: contain;
   background-position: center;
@@ -63,7 +70,7 @@
 }
 
 .cell.forbidden {
-  background-color: #fa9d9d !important;
+  background-color: var(--color-forbidden) !important;
 }
 
 .game-text {

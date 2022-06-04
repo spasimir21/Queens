@@ -17,8 +17,7 @@ body {
 :root {
   --color-background: #fde74c;
   --color-foreground: #100b00;
-  --color-player-main: blue;
-  --color-player-enemy: red;
+  --color-forbidden: #fa9d9d;
   --cell-size: 0px;
 }
 

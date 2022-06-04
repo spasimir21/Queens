@@ -9,6 +9,8 @@ class QueensUI {
   private readonly topText: HTMLParagraphElement;
   private readonly bottom: HTMLDivElement;
   private readonly top: HTMLDivElement;
+
+  private readonly gridContainer: HTMLParagraphElement;
   private readonly grid: HTMLDivElement;
 
   private readonly cells: HTMLDivElement[][] = [];
@@ -37,14 +39,19 @@ class QueensUI {
     this.bottom = document.createElement('div');
     this.bottom.classList.add('game-bottom');
 
+    this.gridContainer = document.createElement('div');
+    this.gridContainer.classList.add('grid-container');
+
     this.grid = document.createElement('div');
     this.grid.classList.add('grid');
+
+    this.gridContainer.appendChild(this.grid);
 
     this.top.appendChild(this.topText);
     this.bottom.appendChild(this.bottomText);
 
     this.element.appendChild(this.top);
-    this.element.appendChild(this.grid);
+    this.element.appendChild(this.gridContainer);
     this.element.appendChild(this.bottom);
   }
 
@@ -72,17 +79,16 @@ class QueensUI {
     }
 
     const recalculateCellSize = () => {
-      this.grid.style.flexGrow = '1';
+      this.grid.style.height = `0px`;
+      this.grid.style.width = `0px`;
 
-      const rect = this.grid.getBoundingClientRect();
+      const rect = this.gridContainer.getBoundingClientRect();
       let cellSize = (rect.height - this.size[1] - 1) / this.size[1];
 
-      const fullWidth = window.innerWidth - 20;
-      if (this.size[0] + 1 + cellSize * this.size[0] > fullWidth) cellSize = (fullWidth - this.size[0] - 1) / this.size[0];
+      if (this.size[0] + 1 + cellSize * this.size[0] > rect.width) cellSize = (rect.width - this.size[0] - 1) / this.size[0];
 
       document.documentElement.style.setProperty('--cell-size', `${cellSize}px`);
 
-      this.grid.style.flexGrow = '0';
       this.grid.style.height = `${cellSize * this.size[1] + this.size[1] + 1}px`;
       this.grid.style.width = `${cellSize * this.size[0] + this.size[0] + 1}px`;
     };
