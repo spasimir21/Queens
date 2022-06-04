@@ -91,3 +91,41 @@
   transform: scale(1.1) translateY(1%);
   cursor: pointer;
 }
+
+.slider-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 25px;
+  background: white;
+  outline: none;
+  border-radius: 10px;
+}
+
+.slider:hover {
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: black;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: black;
+  cursor: pointer;
+  border-radius: 50%;
+}

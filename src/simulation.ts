@@ -23,8 +23,8 @@ class QueensSimulation {
   public readonly onCellStateChange = new Signal<[position: CellPosition, state: CellState]>();
   public readonly onGameStateChange = new Signal<[state: GameState, player: Player]>();
 
-  private readonly cells: CellState[][] = [];
   public readonly size: [number, number];
+  private cells: CellState[][] = [];
 
   // prettier-ignore
   private _playableCells: CellPosition[] = [];
@@ -51,6 +51,13 @@ class QueensSimulation {
         throw new Error("Queens's grid size must be a whole number and between 5 and 51!");
 
     this.size = size;
+  }
+
+  cloneState(other: QueensSimulation) {
+    this.cells = other.cells.map(row => [...row]);
+    this._currentPlayer = other.currentPlayer;
+    this._playableCells = [...other.playableCells];
+    this._state = other.state;
   }
 
   public init() {

@@ -7,6 +7,8 @@ const GAME_SAVE_KEY = '$QUEENS_GAME_SAVE';
 interface GameSave {
   boardSize: [number, number];
   playerNames: string[];
+  botDifficulty: number;
+  vsBot: boolean;
   scores: Record<string, number>;
 }
 
@@ -14,6 +16,8 @@ function getDefaultGameSave(): GameSave {
   return {
     boardSize: [7, 9],
     playerNames: ['PLAYER 1', 'PLAYER 2'],
+    botDifficulty: 1,
+    vsBot: false,
     scores: {}
   };
 }
